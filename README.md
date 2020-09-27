@@ -1,4 +1,4 @@
-## York University Post Graduate Certification in Back-End and Blockchain Development Projects
+## York University Post Graduate Certification in Back-End and Blockchain Development
 
 This repository has projects for the York University's Post Graduate Certification in Back-End and Blockchain Development.
 
