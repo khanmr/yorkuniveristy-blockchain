@@ -1,11 +1,16 @@
 const { v4: uuidv4 } = require("uuid");
+const Web3 = require("web3");
 const {
   create: createLogisticsModel,
   getAll: getAllLogisticsModel,
+  getAllAvailable: getAllAvailableLogisticsModel,
   getByID: getLogisticsModelByID,
   updateByID: updateLogisticsModelByID,
   deleteByID: deleteLogisticsModelByID,
 } = require("../model/logistics");
+
+// initialize web3
+const web3 = new Web3("http://localhost:7545");
 
 const addLogistics = async (req, res) => {
   try {
@@ -30,6 +35,19 @@ const addLogistics = async (req, res) => {
 const getAllLogistics = async (req, res) => {
   try {
     const logistics = await getAllLogisticsModel();
+
+    res.status(200).send(logistics);
+  } catch (error) {
+    // handle errors
+    res.status(500).json({
+      error: error,
+    });
+  }
+};
+
+const getAllAvailableLogistics = async (req, res) => {
+  try {
+    const logistics = await getAllAvailableLogisticsModel();
 
     res.status(200).send(logistics);
   } catch (error) {
@@ -94,6 +112,7 @@ const deleteLogisticsByID = async (req, res) => {
 module.exports = {
   addLogistics,
   getAllLogistics,
+  getAllAvailableLogistics,
   getLogisticsByID,
   updateLogisticsByID,
   deleteLogisticsByID,

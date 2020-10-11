@@ -24,6 +24,22 @@ const getAll = async () => {
   return logistics;
 };
 
+const getAllAvailable = async () => {
+  // asynchronously fetch from the database
+  const query = await db
+    .collection(logisticsCollection)
+    .where("availability", "==", true)
+    .get();
+
+  // build response
+  let logistics = [];
+  query.forEach((doc) => {
+    logistics.push(doc.data());
+  });
+
+  return logistics;
+};
+
 const getByID = async (logisticsID) => {
   // asynchronously fetch from the database
   const logistics = await db
@@ -46,4 +62,11 @@ const deleteByID = async (logisticsID) => {
   await db.collection(logisticsCollection).doc(logisticsID).delete();
 };
 
-module.exports = { create, getAll, getByID, updateByID, deleteByID };
+module.exports = {
+  create,
+  getAll,
+  getAllAvailable,
+  getByID,
+  updateByID,
+  deleteByID,
+};

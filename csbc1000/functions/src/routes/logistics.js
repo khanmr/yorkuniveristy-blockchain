@@ -2,6 +2,7 @@ const express = require("express");
 const {
   addLogistics,
   getAllLogistics,
+  getAllAvailableLogistics,
   getLogisticsByID,
   updateLogisticsByID,
   deleteLogisticsByID,
@@ -16,6 +17,9 @@ router.post("/", addLogistics);
 
 // HTTP GET /logistics delegates to getAllLogistics()
 router.get("/", getAllLogistics);
+
+// HTTP GET /logistics/available delegates to getAllAvailableLogistics()
+router.get("/available", getAllAvailableLogistics);
 
 // HTTP GET /logistics/:id delegates to getLogisticsByID()
 router.get("/:id", getLogisticsByID);

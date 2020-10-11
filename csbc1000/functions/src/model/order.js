@@ -43,4 +43,10 @@ const deleteByID = async (orderID) => {
   await db.collection(ordersCollection).doc(orderID).delete();
 };
 
-module.exports = { create, getAll, getByID, updateByID, deleteByID };
+module.exports = {
+  create,
+  getAll,
+  getByID,
+  updateByID,
+  deleteByID,
+};
