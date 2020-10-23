@@ -4,3 +4,4 @@ This repository has projects for the York University's Post Graduate Certificate
 
 - [Logistics DApp](https://github.com/khanmr/yorkuniveristy-blockchain/tree/master/logistics)
 - [Supply Chain DApp](https://github.com/khanmr/yorkuniveristy-blockchain/tree/master/supplychain)
+- [Nodejs Express MySQL CRUD app](https://github.com/khanmr/yorkuniveristy-blockchain/tree/master/nodejs_crud)
