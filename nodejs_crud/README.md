@@ -1,52 +1,49 @@
-# FS1030
-
-NodeJS-ExpressJS-MYSQL Example
-
-Good example of using MySQL-NodeJS-ExpressJS integration.
+# NodeJS-ExpressJS-MYSQL CRUD app
 
 Credits: Atauba Prince, https://dev.to/achowba/build-a-simple-app-using-node-js-and-mysql-19me
 
-## Commands
+## Instructions
 
-Download the code
+- Download the code
 
 ```
 download and unzip the repo
 ```
 
-Initializes the app
+- Go into app folder
 
 ```
 cd into nodejs_crud folder
 ```
 
-Install the dependencies
+- Install the dependencies
 
 ```
 npm install express express-fileupload body-parser mysql ejs req-flash --save
 ```
 
-Install nodemon globally
+- Install nodemon globally
 
 ```
 npm install nodemon -g
 ```
 
-Start the app (make sure mysql scripts below are run before the next command)
+- Run MySQL script below to create the database and table
+- Start the app
 
 ```
 nodemon app.js
 ```
 
-If nodemon does not work please start the script by
+- If nodemon does not work please start the script by
 
 ```
 node app.js
 ```
 
-Open the browser and browse at http://localhost:5000
+Open the browser and go to http://localhost:5000
 
-## MYSQL Script
+## MySQL Script
 
 ```
 CREATE DATABASE socka;
