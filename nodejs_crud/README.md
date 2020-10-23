@@ -29,21 +29,6 @@ npm install nodemon -g
 ```
 
 - Run MySQL script below to create the database and table
-- Start the app
-
-```
-nodemon app.js
-```
-
-- If nodemon does not work please start the script by
-
-```
-node app.js
-```
-
-Open the browser and go to http://localhost:5000
-
-## MySQL Script
 
 ```
 CREATE DATABASE socka;
@@ -60,3 +45,17 @@ CREATE TABLE IF NOT EXISTS `players` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 ```
+
+- Start the app using nodemon
+
+```
+nodemon app.js
+```
+
+- If nodemon does not work, start the app by using node
+
+```
+node app.js
+```
+
+Open the browser and go to http://localhost:5000
