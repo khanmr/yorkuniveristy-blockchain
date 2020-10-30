@@ -1,13 +1,13 @@
 # PHP MySQL CRUD
 
-Credit: https://www.tutorialrepublic.com/php-tutorial/php-mysql-crud-application.php
+Credits: https://www.tutorialrepublic.com/php-tutorial/php-mysql-crud-application.php
 
 ### Download code
 
 Open command line/terminal
 
-Mac users go to /applications/xampp/htdocs
-Windows users go to c:/xampp/htdocs/ folder
+- Mac users go to /applications/xampp/htdocs
+- Windows users go to c:/xampp/htdocs/ folder
 
 Download code there
 
