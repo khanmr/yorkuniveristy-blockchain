@@ -123,9 +123,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <div class="form-group <?php echo (!empty($department_err)) ? 'has-error' : ''; ?>">
                             <label for="department">Department</label>
                             <select name="department" class="form-control" value="<?php echo $department; ?>">
-                                <option>Finance</option>
-                                <option>IT</option>
-                                <option>Operations</option>
+                                <option value="">Select a department</option>
+                                <option value="Finance">Finance</option>
+                                <option value="IT">IT</option>
+                                <option value="Operations">Operations</option>
                             </select>
                             <span class="help-block"><?php echo $department_err;?></span>
                         </div>

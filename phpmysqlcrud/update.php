@@ -178,15 +178,22 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                         <div class="form-group <?php echo (!empty($department_err)) ? 'has-error' : ''; ?>">
                         <label for="department">Department</label>
                             <select name="department" class="form-control" value="<?php echo $department; ?>">
-                                <option>Finance</option>
-                                <option>IT</option>
-                                <option>Operations</option>
+                                <option value="">Select a department</option>
+                                <option value="Finance"<?php if ($department == 'Finance') {
+                                    echo ' selected';
+                                }?>>Finance</option>
+                                <option value="IT"<?php if ($department == 'IT') {
+                                    echo ' selected';
+                                }?>>IT</option>
+                                <option value="Operations"<?php if ($department == 'Operations') {
+                                    echo ' selected';
+                                }?>>Operations</option>
                             </select>
                             <span class="help-block"><?php echo $department_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($position_err)) ? 'has-error' : ''; ?>">
                             <label>Position</label>
-                            <textarea name="position" class="form-control"><?php echo $position; ?></textarea>
+                            <input type="text" name="position" class="form-control" value="<?php echo $position; ?>">
                             <span class="help-block"><?php echo $position_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($salary_err)) ? 'has-error' : ''; ?>">
