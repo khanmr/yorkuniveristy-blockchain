@@ -124,9 +124,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <label for="department">Department</label>
                             <select name="department" class="form-control" value="<?php echo $department; ?>">
                                 <option value="">Select a department</option>
-                                <option value="Finance">Finance</option>
-                                <option value="IT">IT</option>
-                                <option value="Operations">Operations</option>
+                                <option value="Finance"<?php if ($department == 'Finance') {
+                                    echo ' selected';
+                                }?>>Finance</option>
+                                <option value="IT"<?php if ($department == 'IT') {
+                                    echo ' selected';
+                                }?>>IT</option>
+                                <option value="Operations"<?php if ($department == 'Operations') {
+                                    echo ' selected';
+                                }?>>Operations</option>
                             </select>
                             <span class="help-block"><?php echo $department_err;?></span>
                         </div>
