@@ -25,7 +25,7 @@
 
 ### SQL Queries
 
-Below are the line numbers in the controllers/auth.js file for the SQL queries:
+Below are the line numbers in the `controllers/auth.js` file for the SQL queries:
 
 - Login - Line 23
 - Check if username already exists - Line 100
