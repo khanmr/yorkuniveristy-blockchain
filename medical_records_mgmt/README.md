@@ -34,7 +34,7 @@ Below are the line numbers in the controllers/auth.js file for the SQL queries:
 - Get Care Provider - Line 146
 - Update Care Provider - Line 160
 - Delete Care Provider - Line 172
-- Check if patient health card exists - Line 185
+- Check if patient email already exists - Line 185
 - Add Patient - Line 196
 - Get All Patients - Line 213
 - Get Patient - Line 228

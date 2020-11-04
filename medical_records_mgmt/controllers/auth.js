@@ -114,13 +114,9 @@ exports.addCareProvider = (req, res) => {
     db.query('INSERT INTO users SET ?', [{name: name, username: username, password: hashedPassword}], (error, results) => {
       if(error) {
         console.log(error);
-      } else {
-        console.log(results);
-        return res.render('add-careprovider', {
-          message: 'Care provider added successfully.'
-        })
       }
-    })
+      res.redirect('/careproviders');
+    });
 
 
   });
@@ -182,26 +178,22 @@ exports.addPatient = (req, res) => {
 
   const { first_name, last_name, email, dob, gender, health_card } = req.body;
 
-  db.query('SELECT health_card FROM patients WHERE health_card = ?', [health_card], (error, results) => {
+  db.query('SELECT email FROM patients WHERE email = ?', [email], (error, results) => {
     if(error) {
       console.log(error);
     }
 
     if( results.length > 0 ) {
       return res.render('add-patient', {
-        message: 'Patient with that health card number already exists.'
+        message: 'Patient with that email already exists.'
       })
     }
 
     db.query('INSERT INTO patients SET ?', [{first_name: first_name, last_name: last_name, email: email, date_of_birth: dob, gender: gender, health_card: health_card}], (error, results) => {
       if(error) {
         console.log(error);
-      } else {
-        console.log(results);
-        return res.render('add-patient', {
-          message: 'Patient added successfully.'
-        });
-      }
+      } 
+      res.redirect('/patients');
     })
 
 
