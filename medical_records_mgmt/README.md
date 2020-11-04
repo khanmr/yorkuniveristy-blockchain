@@ -9,7 +9,7 @@
 
 ### Instructions
 
-- Download or fork the repository.
+- Download `medical_records_mgmt.zip` file or fork the repository.
 - Unzip and go to app directory.
 - Run `npm install` to download the dependencies.
 - Open Xampp and start Apache and MySQL server.
