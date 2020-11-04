@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <title>Add Patient</title>
+</head>
+
+<body>
+    <nav>
+        <h4>York Medical Records Management System</h4>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/auth/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="avatar-ctn">
+                        <img src="/avatar.png" class="avatar" alt="user profile picture" />
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@{{user.username}}</h5>
+                        {{#if (is_admin user.is_admin)}}
+                        <p class="card-text">Manage care providers and patients.</p>
+                        <p></p>
+                        <a href="/careproviders" class="btn btn-primary">Care Providers</a>
+                        <p></p>
+                        <a href="/patients" class="btn btn-primary">Patients</a>
+                        {{else}}
+                        <p class="card-text">Manage patients.</p>
+                        <p></p>
+                        <a href="/patients" class="btn btn-primary">Patients</a>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-8">
+                {{#if message }}
+                <h4 class="alert alert-danger mt-4">{{message}}</h4>
+                {{/if}}
+                <div class="card">
+                    <div class="card-header">
+                        Add Patient
+                    </div>
+                    <div class="card-body">
+                        <form action="/auth/add-patient" method="POST">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" class="form-control" id="first_name" name="first_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name">Last Name</label>
+                                <input type="text" class="form-control" id="last_name" name="last_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="dob">Date of Birth</label>
+                                <input type="text" class="form-control" id="dob" name="dob" placeholder="YYYY-MM-DD">
+                            </div>
+                            <div class="form-group">
+                                <label for="health_card">Health Card Number</label>
+                                <input type="text" class="form-control" id="health_card" name="health_card">
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="inlineRadio1"
+                                    value="Male">
+                                <label class="form-check-label" for="inlineRadio1">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="inlineRadio2"
+                                    value="Female">
+                                <label class="form-check-label" for="inlineRadio2">Female</label>
+                            </div>
+                            <p></p>
+                            <button type="submit" class="btn btn-primary">Add Patient</button>
+                        </form>
+                    </div>
+                    <div class="card-footer text-muted">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
