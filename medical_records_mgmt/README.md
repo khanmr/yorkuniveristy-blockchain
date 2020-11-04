@@ -28,7 +28,7 @@
 Below are the line numbers in the controllers/auth.js file for the SQL queries:
 
 - Login - Line 23
-- Check if username exists - Line 100
+- Check if username already exists - Line 100
 - Add Care Provider - Line 114
 - Get All Care Providers - Line 131
 - Get Care Provider - Line 146
