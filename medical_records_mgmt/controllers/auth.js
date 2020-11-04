@@ -178,14 +178,14 @@ exports.addPatient = (req, res) => {
 
   const { first_name, last_name, email, dob, gender, health_card } = req.body;
 
-  db.query('SELECT email FROM patients WHERE email = ?', [email], (error, results) => {
+  db.query('SELECT * FROM patients WHERE email = ? OR health_card = ?', [email, health_card], (error, results) => {
     if(error) {
       console.log(error);
     }
 
     if( results.length > 0 ) {
       return res.render('add-patient', {
-        message: 'Patient with that email already exists.'
+        message: 'Patient with that email or health card number already exists.'
       })
     }
 
@@ -287,7 +287,7 @@ exports.addNote = (req, res) => {
 exports.getNotes = (req, res, next) => {
   const patientId = req.params.id;
 
-        db.query("SELECT n.note AS note, u.name AS care_provider, p.id AS pId, p.first_name AS first_name, p.last_name AS last_name, DATE_FORMAT(n.last_update, '%Y-%m-%d') AS note_date FROM notes AS n JOIN patients AS p ON p.id = n.patient_id JOIN users AS u ON u.id = n.care_provider_id WHERE n.patient_id = ? ORDER BY note_date DESC", [patientId], (err, result) => {
+        db.query("SELECT n.note AS note, u.name AS care_provider, p.id AS pId, p.first_name AS first_name, p.last_name AS last_name, DATE_FORMAT(n.last_update, '%Y-%m-%d') AS note_date FROM notes AS n JOIN patients AS p ON p.id = n.patient_id JOIN users AS u ON u.id = n.care_provider_id WHERE n.patient_id = ? ORDER BY n.last_update DESC", [patientId], (err, result) => {
           if (err) {
               console.log(error);
             }
