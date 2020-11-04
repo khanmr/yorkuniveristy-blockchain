@@ -7,3 +7,4 @@ This repository has projects for the York University's Post Graduate Certificate
 - [Nodejs Express MySQL CRUD app](https://github.com/khanmr/yorkuniveristy-blockchain/tree/master/nodejs_crud)
 - [Nodejs Express MongoDB CRUD app](https://github.com/khanmr/yorkuniveristy-blockchain/tree/master/mongodb_crud)
 - [PHP MySQL CRUD app](https://github.com/khanmr/yorkuniveristy-blockchain/tree/master/phpmysqlcrud)
+- [Medical Records Management System](https://github.com/khanmr/yorkuniveristy-blockchain/tree/master/medical_records_mgmt)

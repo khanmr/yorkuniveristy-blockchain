@@ -9,7 +9,7 @@
 
 ### Instructions
 
-- Download or clone the repository.
+- Download or fork the repository.
 - Unzip and go to app directory.
 - Run `npm install` to download the dependencies.
 - Open Xampp and start Apache and MySQL server.
